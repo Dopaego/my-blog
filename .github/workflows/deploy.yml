@@ -2,8 +2,8 @@ name: VitePress Deploy
 
 on:
   push:
-    branches: [ "main" ] # 监测main分支的推送
-  workflow_dispatch: # 允许手动触发
+    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # 获取完整提交历史
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -27,18 +25,18 @@ jobs:
       - name: Build Project
         run: npx vitepress build docs
         env:
-          NODE_ENV: production # 触发base配置
+          NODE_ENV: production
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4 # 已更新版本
         with:
           name: vitepress-site
           path: docs/.vitepress/dist
 
       - name: Deploy to GH Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs/.vitepress/dist
-          keep_files: false # 清理旧文件
-          force_orphan: true # 单分支部署
+          keep_files: false
+          force_orphan: true

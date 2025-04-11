@@ -1,7 +1,2 @@
-# 我的第一篇文章
-
-欢迎阅读我的第一篇博客！
-
-- VitePress 入门
-- GitHub Pages 部署
-- Markdown 写作体验
+# JS
+等有空再把学js难的地方做的笔记搬上来感觉Promise啥的不做笔记光看文档还是难理解

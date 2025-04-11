@@ -1,0 +1,1 @@
+import{_ as r,c as a,o as t,ae as o}from"./chunks/framework.DbnbUhgt.js";const f=JSON.parse('{"title":"前端学习网站","description":"","frontmatter":{},"headers":[],"relativePath":"index.md","filePath":"index.md"}'),l={name:"index.md"};function n(i,e,s,c,_,p){return t(),a("div",null,e[0]||(e[0]=[o("",2)]))}const h=r(l,[["render",n]]);export{f as __pageData,h as default};
